@@ -13,10 +13,6 @@
         points.  Default, \code{sqrt(n_factors)}}
 }
 \details{
-    Generate a central composite design of arbitrary number of factors with
-    arbitrary number of center points, and user specified axial points.  The
-    user can specify the radial distance of the axial points.
-
     Central Composite Designs (CCD) were developed by Box and Wilson
     (1951) and are often used when a second order model is being
     considered. The design contains three components:

@@ -32,10 +32,11 @@
   G criterions are those provided by the SAS documentation for PROC
   OPTEX. The D- and A-efficiencies are the relative number of runs
   (expressed as percents) required by a hypothetical orthogonal design
-  to achieve the same and , respectively; refer to Mitchell (1974b). "D"
+  to achieve the same \eqn{|X'X|} and \eqn{\mbox{trace}(X'X)^{-1}}, respectively; refer to Mitchell (1974b). "D"
   and "A" efficiencies are exact.  "I" and "G" efficiencies are 
   approximated based on the evaluation data frame.  Beware that approximate
-  comparisons between "I" and "G" may be misleading.  See JOBO.
+  comparisons between "I" and "G" may be misleading.  See JOBO Response
+  Surface notes.
 }
 \value{A list of numbers}
 \author{Michael Lerch and John Sherrill}
@@ -44,4 +45,4 @@
      candidate <- candidate / max(candidate)
      getEff(~ X1 + X2, genFactorial(2, 2), candidate)
 }
-\keyword{zero or more keywords}
+\keyword{design criterion}

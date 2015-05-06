@@ -30,13 +30,13 @@
     closed form for the number of latin squares of a given size. As
     evidence of the difficulty of determining the number of latin
     squares of a given size, it is currently unknown how many latin
-    squares exist of size 12 or greater.
+    squares exist of size greater than 11.
 
     While there is no current method to generate exactly uniformly distributed
     latin squares, a paper published in 1996 by Mark Jacobson and Peter
     Matthews introduced an algorithm that creates a random walk through
     the set of latin squares and thus, by ergodicity, supplies a method
-    for generating, essentially random latin squares.
+    for generating essentially random latin squares.
     
     See Jacobson and Matthews, 1996.
 }

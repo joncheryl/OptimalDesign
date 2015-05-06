@@ -2,7 +2,7 @@
 \alias{genFactorial}
 \title{Generate a factorial design}
 \description{
-    Generate a factorial design at arbitrary levels and variables
+    Generate a factorial design at arbitrary levels and factors
 }
 \usage{genFactorial(n_levels, n_terms)}
 \arguments{
@@ -29,10 +29,11 @@
       1 \tab -1 \tab 1 \cr
       1 \tab 1 \tab -1 \cr
       1 \tab 1 \tab 1
-    }.
-    It is common to denote factorial designs by use of exponential
-    notation. For example, a factorial design with 3 factors, each
-    having 2 levels, e.g. the above design, is denoted as a \eqn{2^3}
+  }
+
+  It's common to denote factorial designs by use of exponential
+  notation. For example, a factorial design with 3 factors, each
+    having 2 levels, i.e. the above design, is denoted as a \eqn{2^3}
     factorial design and one having 7 factors, each having 4 levels is
     denotes as a \eqn{4^7} factorial design. See (Montgomery, 183) for more.
 

@@ -13,7 +13,7 @@
 \details{
   Generates a human readable scaled prediction variance (SPV) function given a
   specified design \eqn{X} and formula. See the vignette for the
-  \code{OptimalDesign} package for a presentation on scaled prediction
+  \code{OptimalDesign} package for a presentation on the scaled prediction
   variance function and it's utility.
 
   This function utilizes a homebrewed computer algebra system and the
