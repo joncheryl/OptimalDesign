@@ -25,12 +25,14 @@ arma::vec delta_common(arma::mat xpxinv, arma::mat row_in, arma::mat row_out)
     return common;
 }
 
+// compute change to D criterion given a change in the design matrix
 double get_delta_d(arma::mat xpxinv, arma::mat row_in, arma::mat row_out)
 {
     arma::vec common = delta_common(xpxinv, row_in, row_out);
     return common(0);
 }
 
+// compute change to A criterion given a change in the design matrix
 double get_delta_a(arma::mat xpxinv, arma::mat row_in, arma::mat row_out)
 {
     arma::vec common = delta_common(xpxinv, row_in, row_out);
@@ -56,6 +58,7 @@ double get_delta_a(arma::mat xpxinv, arma::mat row_in, arma::mat row_out)
     return delta;
 }
 
+// compute ESTIMATED change to g criterion given a change in the design matrix
 double get_delta_g(double g_crit_old, arma::mat X, arma::mat U_can)
 {
     arma::vec s;
@@ -73,6 +76,7 @@ double get_delta_g(double g_crit_old, arma::mat X, arma::mat U_can)
     return g_crit_old - g_crit;
 }
 
+// compute change to I criterion given a change in the design matrix
 double get_delta_i(arma::mat xpxinv, arma::mat row_in, arma::mat row_out, arma::mat B)
 {
     arma::vec common = delta_common(xpxinv, row_in, row_out);
@@ -94,6 +98,22 @@ double get_delta_i(arma::mat xpxinv, arma::mat row_in, arma::mat row_out, arma::
     double phioo = phioom(0, 0);
 
     double delta = ( (1 - doo) * phiii + dio * (phiio + phioi) - (1 + dii) * phioo ) / (1 + delta_d);
+
+    return delta;
+}
+
+// compute ESTIMATED change to g criterion given a change in the design matrix
+// using gradient descent
+double get_delta_gGD(double g_crit_old, arma::mat xpxinv, arma::mat row_in, arma::mat row_out, const int[] &primes)
+{
+    // estimated g_crit of new design
+    double g_crit_temp;
+
+    // get svd (called svdTemp) of designTemp
+    
+    // gradient descent svdTemp to a minimum (called minBest)
+    
+    double delta = g_crit_temp - g_crit_old;
 
     return delta;
 }

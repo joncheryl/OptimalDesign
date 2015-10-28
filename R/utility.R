@@ -132,7 +132,7 @@ primeDecomp <- function(x)
 # variables and their products by products of prime numbers. It's the
 # fund. theorem of arithmetic in action.
 #
-# right now this assumes there's an intercept term in in the model
+# This assumes there's an intercept term in the model
 
 spvEquation <- function(formula, design)
 {
@@ -163,7 +163,7 @@ spvEquation <- function(formula, design)
     coef <- cbind( rep(0, length(terms)), terms)
     for(i in 1:length(terms)) coef[i,1] <- sum(infoMat*(primeMat == coef[i,2]))
 
-    # multiply these coefficients by the size of the design, N, to get Scaled PV
+    # multiply these coefficients by the size of the design, N, to get SPV
     coef[,1] = N*coef[,1]
 
     #########################################################

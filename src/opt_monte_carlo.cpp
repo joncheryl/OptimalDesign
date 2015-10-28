@@ -24,7 +24,7 @@ arma::uvec opt_montecarlocpp(const arma::mat& Xc, arma::uvec current,
     // candidateidx is a vector of indexes that are legal propositions for
     //   swapping with an element of current (all if repeated, all\current if
     //   not)
-    // crit is the criteria of interest (1==D, 2==A, 3==G, 4==I)
+    // crit is the criteria of interest (1==D, 2==A, 3==G, 4==I, 5==G grad des)
     // iterations is the total number of iterations in the process
     // repeated is whether or not to allow candidate points to appear more than
     //   once in current.
@@ -109,7 +109,11 @@ arma::uvec opt_montecarlocpp(const arma::mat& Xc, arma::uvec current,
         {
             delta = get_delta_i(xpxinv, Xc.row(in), Xc.row(out), B);
         }
-
+	else if (crit == 5) // Criteria G using gradient descent
+	{
+	    delta = get_delta_gGD(xpxinv, Xc.row(in), Xc.row(out));
+	}
+	
         // 3. If delta > 0, accept, else revert (ie do nothing)
         if (delta > 0)
         {
