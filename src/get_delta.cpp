@@ -117,3 +117,36 @@ double get_delta_gGD(double g_crit_old, arma::mat xpxinv, arma::mat row_in, arma
 
     return delta;
 }
+
+int gen_primes(int n_primes)
+{
+    arma::uvec primes(n_primes);
+    primes(0) = 2;
+
+    int i = 3;
+    int found_primes = 1;
+
+    bool legit_prime;
+    
+    while(found_primes < n_primes)
+    {
+	legit_prime = 1;
+	
+	for(int j = 0; j < found_primes; j++)
+	{
+	    if(primes(j) % i == 0)
+	    {
+		legit_prime = 0;
+		break;
+	    }
+	}
+	
+	if(legit_prime)
+	{
+	    primes(found_primes + 1) = i; 
+	    found_primes++;
+	}
+
+	i = i+1;
+    }
+}

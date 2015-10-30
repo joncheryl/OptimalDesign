@@ -11,6 +11,7 @@ double get_delta_d(arma::mat, arma::mat, arma::mat);
 double get_delta_a(arma::mat, arma::mat, arma::mat);
 double get_delta_i(arma::mat, arma::mat, arma::mat, arma::mat);
 arma::vec delta_common(arma::mat, arma::mat, arma::mat);
+arma::uvec gen_primes(int);
 
 // [[Rcpp::export]]
 arma::uvec opt_montecarlocpp(const arma::mat& Xc, arma::uvec current,
@@ -76,6 +77,12 @@ arma::uvec opt_montecarlocpp(const arma::mat& Xc, arma::uvec current,
     // need potential design for g-crit
     arma::uvec potential = current;
 
+    /**** Initial object(s) for g-criterion with gradient descent ****/
+    arma::uvec primes = 
+    
+    // -john
+    // perhaps the while loop should be nested within the if statements?
+    // makes more control sense to me but would be uglier
     int iter = 0;
     while (iter < iterations)
     {
